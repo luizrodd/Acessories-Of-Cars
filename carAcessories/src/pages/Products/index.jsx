@@ -1,18 +1,47 @@
+import { useParams } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import Product from "../../components/Product";
-import styles from './Products.module.css'
+import styles from "./Products.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchProducts } from "../../store/reducers/products";
+import { useEffect } from "react";
+import { fetchCategoryById } from "../../store/reducers/categories";
+
 export default function Products() {
+  const dispatch = useDispatch();
+  const { title, id } = useParams(); // Desestruture os parâmetros da URL corretamente
+
+  useEffect(() => {
+    dispatch(fetchProducts());
+    dispatch(fetchCategoryById(id));
+  }, [dispatch, id]);
+
+  // Utilize useSelector para acessar os estados corretamente
+  const products = useSelector((state) =>
+    state.products.filter((product) => product.category === title)
+  );
+  const categories = useSelector((state) => state.categories);
   return (
     <div className={styles.products}>
       <div>
-        <Navbar
-          description="wheels"
-          title="Wheels"
-          photo="https://cdn.awsli.com.br/2500x2500/974/974153/produto/43499093/bbs_cir_platinumsilver-ylrydx.jpg"
-        />
+        {categories && (
+          <Navbar
+            key={categories.id}
+            title={categories.title}
+            photo={categories.photo}
+          />
+        )}
       </div>
       <div>
-        <Product name='BBS'description='BBS CI-R Platinum Silver 5x112 19x9 ET42' price='3000' photo='	https://cdn.awsli.com.br/600x450/974/974153/produto/43499093/3dc46aefc8.jpg'/>
+        {products.map((product) => (
+          <Product
+            key={product.id}
+            name={product.name}
+            description={product.description}
+            price={product.price}
+            photo={product.photo}
+          />
+        ))}
       </div>
     </div>
   );

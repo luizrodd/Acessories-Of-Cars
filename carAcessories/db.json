@@ -8,12 +8,12 @@
     {
       "id": 2,
       "title": "exhaust",
-      "photo": "https://cdn.awsli.com.br/600x450/974/974153/produto/43499093/3dc46aefc8.jpg"
+      "photo": "https://yumesports.ca/wp-content/uploads/2020/11/DSC07766_copy_530x.jpg"
     },
     {
       "id": 3,
       "title": "suspension",
-      "photo": "https://cdn.awsli.com.br/600x450/974/974153/produto/43499093/3dc46aefc8.jpg"
+      "photo": "https://www.f2suspension.com/wp-content/uploads/2022/01/2012-2020-VW-Volkswagon-Golf-Gti-MK7-Function-and-Form-F2-Suspension-Type-3-Performance-Digressive-Adjustable-Coilover-35500114-Main.jpg"
     }
   ],
   "products": [
@@ -30,7 +30,7 @@
       "name": "Magnaflow Exhaust",
       "description": "Magnaflow Street Series Cat-Back Exhaust",
       "price": 600,
-      "photo": "https://example.com/magnaflow.jpg",
+      "photo": "https://pbs.twimg.com/media/F49PoTWW0AACX66.jpg",
       "category": "exhaust"
     },
     {
@@ -38,7 +38,7 @@
       "name": "Eibach Pro-Kit",
       "description": "Eibach Pro-Kit Lowering Springs",
       "price": 300,
-      "photo": "https://example.com/eibach.jpg",
+      "photo": "https://cdn.awsli.com.br/600x700/396/396609/produto/14666485636cb518365.jpg",
       "category": "suspension"
     },
     {
@@ -46,7 +46,7 @@
       "name": "Enkei RPF1",
       "description": "Enkei RPF1 Black 5x114.3 17x9 ET35",
       "price": 800,
-      "photo": "https://example.com/enkei.jpg",
+      "photo": "https://cdn.awsli.com.br/2500x2500/974/974153/produto/215542380/691a9735-copiar-jjiqr9xqhs.jpg",
       "category": "wheels"
     }
   ]

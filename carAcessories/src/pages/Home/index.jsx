@@ -7,11 +7,13 @@ import { fetchCategories } from "../../store/reducers/categories";
 
 export default function Home() {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const categories = useSelector((state) => state.categories);
   useEffect(() => {
     dispatch(fetchCategories());
   }, [dispatch]);
+
+  const navigate = useNavigate();
+  const categories = useSelector((state) => state.categories);
+  console.log(categories)
 
   return (
     <div className={styles.home}>
@@ -24,7 +26,13 @@ export default function Home() {
       </div>
       <div className={styles.categories}>
         {categories.map((category) => (
-          <div key={category.id} className={styles.categories_card} onClick={() => navigate(`/products/${category.title}`)}>
+          <div
+            key={category.id}
+            className={styles.categories_card}
+            onClick={() =>
+              navigate(`/products/${category.title}/${category.id}`)
+            }
+          >
             <div className={styles.photo}>
               <img src={category.photo} alt={category.title} />
             </div>
