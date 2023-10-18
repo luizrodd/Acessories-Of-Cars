@@ -1,0 +1,43 @@
+.product {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .photo {
+    width: 200px;
+    height: 200px;
+    margin-right: 20px;
+    overflow: hidden;
+  }
+  
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50px;
+  }
+  
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  
+  .desc {
+    margin-bottom: 10px;
+  }
+  
+  .desc p {
+    color: white;
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .price {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+  }

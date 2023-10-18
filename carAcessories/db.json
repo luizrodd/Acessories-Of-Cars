@@ -1,0 +1,28 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "title": "wheels",
+      "photo": "https://cdn.awsli.com.br/600x450/974/974153/produto/43499093/3dc46aefc8.jpg"
+    },
+    {
+      "id": 2,
+      "title": "exhaust",
+      "photo": "https://cdn.awsli.com.br/600x450/974/974153/produto/43499093/3dc46aefc8.jpg"
+    },
+    {
+      "id": 3,
+      "title": "suspension",
+      "photo": "https://cdn.awsli.com.br/600x450/974/974153/produto/43499093/3dc46aefc8.jpg"
+    }
+  ],
+  "products": [
+    {
+        "id": 1,
+        "name": "BBS",
+        "description":"BBS CI-R Platinum Silver 5x112 19x9 ET42",
+        "price": 1000,
+        "photo": "https://cdn.awsli.com.br/600x450/974/974153/produto/43499093/62792306be.jpg"
+    }
+  ]
+}
