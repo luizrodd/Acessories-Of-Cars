@@ -4,13 +4,18 @@
     background-position: center;
     height: 92.7vh;
 }
-.categorys{
+.categories{
+    margin:0 200px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.categories_card{
     margin-top: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
     cursor: pointer;
+    align-items: center;
 }
 .photo img{
     width: 200px;
