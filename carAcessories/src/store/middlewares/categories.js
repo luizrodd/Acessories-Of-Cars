@@ -32,11 +32,12 @@ listenerCategories.startListening({
     const categories = getState().categories;
     const id = action.payload;
     const categoryLoad = categories.some((category) => category.id === id);
-    
+
     if (categoryLoad) return;
     if (categories.length === 3) return unsubscribe();
 
     const task = fork(async (api) => {
+      await api.delay(500);
       return await categoriesService.getCategoryById(id);
     });
 

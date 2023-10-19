@@ -1,18 +1,17 @@
 .nav {
-    background-color: rgba(0, 0, 0, 0.663);
-    padding-top: 10px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     text-align: center;
     height: 250px;
-    -webkit-box-shadow: inset 0px 10px 5px 0px rgba(0, 0, 0, 1);
-    -moz-box-shadow: inset 0px 10px 5px 0px rgba(0, 0, 0, 1);
-    box-shadow: inset 0px 10px 5px 0px rgba(0, 0, 0, 1);
 }
 
 .desc {
     color: white;
+}
+
+.desc h1 {
+    text-transform: capitalize;
 }
 
 .photo img {

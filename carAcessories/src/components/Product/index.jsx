@@ -1,9 +1,7 @@
 /* eslint-disable no-const-assign */
 /* eslint-disable react/prop-types */
-import { useNavigate } from "react-router-dom";
 import styles from "./Product.module.css";
 export default function Product({ photo, name, price, description }) {
-  const navigate = useNavigate()
   return (
     <div className={styles.product}>
       <div className={styles.photo}>

@@ -36,7 +36,7 @@ export default function Home() {
               <img src={category.photo} alt={category.title} />
             </div>
             <div className={styles.name}>
-              <p>{category.title}</p>
+              <span>{category.title}</span>
             </div>
           </div>
         ))}
