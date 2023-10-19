@@ -1,30 +1,29 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import categoriesService from "../../services/categories";
+import { createAction,  createSlice } from "@reduxjs/toolkit";
 
 const initialState = [];
 
-export const fetchCategories = createAsyncThunk(
-  "categories/fetchCategories",
-  categoriesService.getCategories
+export const loadCategories = createAction(
+  "categories/loadCategories",
 );
-export const fetchCategoryById = createAsyncThunk(
-  "categories/fetchCategoryById",
-  categoriesService.getCategoryById
-);
+export const loadCategoriesById = createAction(
+  "categories/loadCategoriesById",
+)
 
 const categoriesSlice = createSlice({
   name: "categories",
   initialState,
-  reducers: {},
-  extraReducers: (builder) => {
-    builder
-      .addCase(fetchCategories.fulfilled, (state, { payload }) => {
-        return payload;
-      })
-      .addCase(fetchCategoryById.fulfilled, (state, { payload }) => {
-        return payload;
-      });
-  },
+  reducers: {
+    fetchCategoriesInMiddleware: (state, {payload}) => {
+        return payload
+    },
+    fetchCategoriesInMiddlewareById: (state, { payload }) => {
+      // Atualize o estado categories corretamente
+      const updatedCategories = [...state, payload];
+      return updatedCategories;
+    }
+  }
 });
+
+export const {fetchCategoriesInMiddleware, fetchCategoriesInMiddlewareById} = categoriesSlice.actions;
 
 export default categoriesSlice.reducer;

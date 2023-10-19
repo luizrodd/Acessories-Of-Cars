@@ -5,22 +5,24 @@ import styles from "./Products.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../../store/reducers/products";
 import { useEffect } from "react";
-import { fetchCategoryById } from "../../store/reducers/categories";
+import { loadCategoriesById } from "../../store/reducers/categories";
 
 export default function Products() {
   const dispatch = useDispatch();
-  const { title, id } = useParams(); // Desestruture os parâmetros da URL corretamente
-
-  useEffect(() => {
-    dispatch(fetchProducts());
-    dispatch(fetchCategoryById(id));
-  }, [dispatch, id]);
-
+  const { title, id } = useParams();
   // Utilize useSelector para acessar os estados corretamente
   const products = useSelector((state) =>
     state.products.filter((product) => product.category === title)
   );
-  const categories = useSelector((state) => state.categories);
+  const categories = useSelector((state) =>
+    state.categories.find((category) => category.id == id)
+  );
+
+  useEffect(() => {
+    dispatch(fetchProducts());
+    dispatch(loadCategoriesById(id));
+  }, [dispatch, id]);
+
   return (
     <div className={styles.products}>
       <div>

@@ -3,17 +3,16 @@ import Navbar from "../../components/Navbar";
 import styles from "./Home.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { fetchCategories } from "../../store/reducers/categories";
+import { loadCategories } from "../../store/reducers/categories";
 
 export default function Home() {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchCategories());
+    dispatch(loadCategories());
   }, [dispatch]);
 
   const navigate = useNavigate();
   const categories = useSelector((state) => state.categories);
-  console.log(categories)
 
   return (
     <div className={styles.home}>
@@ -25,9 +24,9 @@ export default function Home() {
         />
       </div>
       <div className={styles.categories}>
-        {categories.map((category) => (
+        {categories.map((category, index) => (
           <div
-            key={category.id}
+            key={index}
             className={styles.categories_card}
             onClick={() =>
               navigate(`/products/${category.title}/${category.id}`)
