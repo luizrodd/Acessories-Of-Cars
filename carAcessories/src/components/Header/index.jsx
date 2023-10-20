@@ -25,7 +25,9 @@ function Header() {
         </div>
         <div className={styles.right}>
           <div className={styles.right_cart}>
-            <AiOutlineShoppingCart />
+            <Link to="/cart">
+              <AiOutlineShoppingCart />
+            </Link>
           </div>
           <div className={styles.right_login}>
             <p>

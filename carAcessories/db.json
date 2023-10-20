@@ -23,7 +23,8 @@
       "description": "BBS CI-R Platinum Silver 5x112 19x9 ET42",
       "price": 1000,
       "photo": "https://cdn.awsli.com.br/600x450/974/974153/produto/43499093/62792306be.jpg",
-      "category": "wheels"
+      "category": "wheels",
+      "favorite": false
     },
     {
       "id": 2,
@@ -31,7 +32,8 @@
       "description": "Magnaflow Street Series Cat-Back Exhaust",
       "price": 600,
       "photo": "https://pbs.twimg.com/media/F49PoTWW0AACX66.jpg",
-      "category": "exhaust"
+      "category": "exhaust",
+      "favorite": false
     },
     {
       "id": 3,
@@ -39,7 +41,8 @@
       "description": "Eibach Pro-Kit Lowering Springs",
       "price": 300,
       "photo": "https://cdn.awsli.com.br/600x700/396/396609/produto/14666485636cb518365.jpg",
-      "category": "suspension"
+      "category": "suspension",
+      "favorite": false
     },
     {
       "id": 4,
@@ -47,7 +50,8 @@
       "description": "Enkei RPF1 Black 5x114.3 17x9 ET35",
       "price": 800,
       "photo": "https://cdn.awsli.com.br/2500x2500/974/974153/produto/215542380/691a9735-copiar-jjiqr9xqhs.jpg",
-      "category": "wheels"
+      "category": "wheels",
+      "favorite": false
     },
     {
       "id": 5,
@@ -55,7 +59,8 @@
       "description": "Enkei RPF1 Black 5x114.3 17x9 ET35",
       "price": 800,
       "photo": "https://cdn.awsli.com.br/2500x2500/974/974153/produto/215542380/691a9735-copiar-jjiqr9xqhs.jpg",
-      "category": "wheels"
+      "category": "wheels",
+      "favorite": false
     }
   ]
 }

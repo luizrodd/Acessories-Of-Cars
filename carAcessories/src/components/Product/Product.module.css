@@ -6,15 +6,8 @@
     border-radius: 40px;
     width: 500px;
     margin-right: 20px;
-    transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
   }
-  .product:hover{
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    filter: brightness(0.8); /* Escurece a imagem ao passar o mouse */
-    border: 2px solid rgb(255, 255, 255);
-    cursor: pointer;
-  }
+
   .photo {
     width: 200px;
     height: 200px;
@@ -67,5 +60,11 @@
     border: 2px solid rgb(73, 71, 71);
     padding: 10px 25px;
     border-radius: 10px;
+    cursor: pointer;
+  }
+  .cart{
+    cursor: pointer;
+  }
+  .favorite{
     cursor: pointer;
   }

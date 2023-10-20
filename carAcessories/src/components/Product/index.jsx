@@ -1,8 +1,24 @@
 /* eslint-disable no-const-assign */
 /* eslint-disable react/prop-types */
-import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
+import {
+  AiFillHeart,
+  AiOutlineHeart,
+  AiOutlineShoppingCart,
+} from "react-icons/ai";
 import styles from "./Product.module.css";
-export default function Product({ photo, name, price, description }) {
+import { changeFavorite } from "../../store/reducers/products";
+import { useDispatch } from "react-redux";
+import { insertCart } from "../../store/reducers/cart";
+export default function Product(props) {
+  const { photo, name, price, description, favorite, id } = props;
+  const dispatch = useDispatch();
+
+  function handleFavorite() {
+    dispatch(changeFavorite(id));
+  }
+  function handleCart() {
+    dispatch(insertCart(props));
+  }
   return (
     <div className={styles.product}>
       <div className={styles.photo}>
@@ -19,10 +35,22 @@ export default function Product({ photo, name, price, description }) {
             <button>Buy</button>
           </div>
           <div className={styles.cart}>
-            <AiOutlineShoppingCart size={25} color="white" />
+            <AiOutlineShoppingCart
+              size={25}
+              color="white"
+              onClick={handleCart}
+            />
           </div>
           <div className={styles.favorite}>
-            <AiOutlineHeart size={25} color="white"/>
+            {favorite ? (
+              <AiFillHeart size={25} color="red" onClick={handleFavorite} />
+            ) : (
+              <AiOutlineHeart
+                size={25}
+                color="white"
+                onClick={handleFavorite}
+              />
+            )}
           </div>
         </div>
       </div>

@@ -42,6 +42,8 @@ export default function Products() {
             description={product.description}
             price={product.price}
             photo={product.photo}
+            favorite={product.favorite}
+            id={product.id}
           />
         ))}
       </div>
