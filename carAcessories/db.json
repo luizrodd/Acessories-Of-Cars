@@ -48,6 +48,14 @@
       "price": 800,
       "photo": "https://cdn.awsli.com.br/2500x2500/974/974153/produto/215542380/691a9735-copiar-jjiqr9xqhs.jpg",
       "category": "wheels"
+    },
+    {
+      "id": 5,
+      "name": "Enkei RPF1",
+      "description": "Enkei RPF1 Black 5x114.3 17x9 ET35",
+      "price": 800,
+      "photo": "https://cdn.awsli.com.br/2500x2500/974/974153/produto/215542380/691a9735-copiar-jjiqr9xqhs.jpg",
+      "category": "wheels"
     }
   ]
 }

@@ -1,6 +1,11 @@
 .products{
-    background-image: url('../../assets/cool-background.png');
+    background-image: url('../../assets/wav.svg');
     background-size: cover;
     background-position: center;
-    height: 92.7vh;
+    height: 100vh;
+}
+.product{
+    display: flex;
+    align-items: center;
+    margin: 0 200px;
 }

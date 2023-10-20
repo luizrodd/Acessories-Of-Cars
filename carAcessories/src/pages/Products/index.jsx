@@ -34,7 +34,7 @@ export default function Products() {
           />
         )}
       </div>
-      <div>
+      <div className={styles.product}>
         {products.map((product) => (
           <Product
             key={product.id}
