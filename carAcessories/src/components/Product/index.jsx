@@ -2,23 +2,36 @@
 /* eslint-disable react/prop-types */
 import {
   AiFillHeart,
+  AiFillMinusCircle,
+  AiFillPlusCircle,
   AiOutlineHeart,
   AiOutlineShoppingCart,
 } from "react-icons/ai";
 import styles from "./Product.module.css";
 import { changeFavorite } from "../../store/reducers/products";
-import { useDispatch } from "react-redux";
-import { insertCart } from "../../store/reducers/cart";
+import { useDispatch, useSelector } from "react-redux";
+import { changeQuantity, insertCart, removeFromCart } from "../../store/reducers/cart";
+import { useLocation } from "react-router-dom";
 export default function Product(props) {
-  const { photo, name, price, description, favorite, id } = props;
+  const location = useLocation()
+  const { photo, name, price, description, favorite, id, quantity } = props;
+  const itsInCart = useSelector((state) =>
+    state.cart.some((item) => item.id === id)
+  );
+  const isCartPage = location.pathname === "/cart";
+
   const dispatch = useDispatch();
 
   function handleFavorite() {
     dispatch(changeFavorite(id));
   }
-  function handleCart() {
+  function handleInsertCart() {
     dispatch(insertCart(props));
   }
+  function handleRemoveCart(){
+    dispatch(removeFromCart(id)); // onde id é o ID do item a ser removido
+  }
+
   return (
     <div className={styles.product}>
       <div className={styles.photo}>
@@ -35,11 +48,19 @@ export default function Product(props) {
             <button>Buy</button>
           </div>
           <div className={styles.cart}>
-            <AiOutlineShoppingCart
-              size={25}
-              color="white"
-              onClick={handleCart}
-            />
+            {itsInCart ? (
+              <AiOutlineShoppingCart
+                size={25}
+                color="#68d6ff"
+                onClick={handleRemoveCart}
+              />
+            ) : (
+              <AiOutlineShoppingCart
+                size={25}
+                color="white"
+                onClick={handleInsertCart}
+              />
+            )}
           </div>
           <div className={styles.favorite}>
             {favorite ? (
@@ -52,6 +73,21 @@ export default function Product(props) {
               />
             )}
           </div>
+          {itsInCart && isCartPage ? (
+            <div className={styles.quantity}>
+              <div>
+                <AiFillMinusCircle size={25} color="white" cursor="pointer" onClick={() => {if(quantity > 1) dispatch(changeQuantity({id, quantity: -1}))}}/>
+              </div>
+              <div>
+                <span>{quantity}</span>
+              </div>
+              <div>
+                <AiFillPlusCircle size={25} color="white" cursor="pointer" onClick={() => dispatch(changeQuantity({id, quantity: +1}))} />
+              </div>
+            </div>
+          ) : (
+            <></>
+          )}
         </div>
       </div>
     </div>

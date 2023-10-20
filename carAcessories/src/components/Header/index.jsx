@@ -31,7 +31,7 @@ function Header() {
           </div>
           <div className={styles.right_login}>
             <p>
-              <AiOutlineUser />
+              <AiOutlineUser size={25}/>
             </p>
             <p>Login</p>
             <p>Logout</p>

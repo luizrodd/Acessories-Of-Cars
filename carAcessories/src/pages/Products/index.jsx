@@ -33,7 +33,7 @@ export default function Products() {
             photo={categories.photo}
           />
         )}
-      </div>
+      </div> 
       <div className={styles.product}>
         {products.map((product) => (
           <Product

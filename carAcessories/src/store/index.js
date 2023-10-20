@@ -1,4 +1,4 @@
-import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
 import categoriesSlice from './reducers/categories';
 import productsSlice from './reducers/products'
 import cartSlice from './reducers/cart'
