@@ -36,3 +36,14 @@
     cursor: pointer;
     color: rgb(160, 160, 160);
 }
+.backPage{
+    display: flex;
+    align-items: center;
+}
+.backPage button{
+    background-color: black;
+    color: white;
+    padding: 15px;
+    border: 0;
+    cursor: pointer;
+}
